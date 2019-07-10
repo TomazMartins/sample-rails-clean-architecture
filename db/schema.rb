@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_07_10_103905) do
+ActiveRecord::Schema.define(version: 2019_07_10_112757) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,12 +21,12 @@ ActiveRecord::Schema.define(version: 2019_07_10_103905) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "core_domain_transactions", force: :cascade do |t|
-    t.decimal "total"
+  create_table "core_domain_ttransactions", force: :cascade do |t|
     t.bigint "account_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["account_id"], name: "index_core_domain_transactions_on_account_id"
+    t.decimal "amount"
+    t.index ["account_id"], name: "index_core_domain_ttransactions_on_account_id"
   end
 
 end

@@ -1,5 +1,5 @@
 module CoreDomain
   class Account < ApplicationRecord
-    has_many :transaction, class_name: 'CoreDomain::Transaction'
+    has_many :ttransactions, class_name: '::CoreDomain::Ttransaction'
   end
 end

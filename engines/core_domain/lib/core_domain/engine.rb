@@ -3,11 +3,10 @@ module CoreDomain
     isolate_namespace CoreDomain
     config.generators.api_only = true
 
-    initializer "foo_bar", after: :load_config_initializers do |app|
+    initializer "core_domain", after: :load_config_initializers do |app|
       # To load the no defaults directories of Rails
-      # CoreDomain.load_files.each do |file|
-      #   require_relative File.join("../..", file)
-      # end
+      Dir[ "./interactors/*.rb" ].each { |file| require file }
+      Dir[ "./boundaries/*.rb" ].each { |file| require file }
 
       # To add the migration in main app
       config.paths["db/migrate"].expanded.each do |expanded_path|
