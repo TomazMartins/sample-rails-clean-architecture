@@ -1,0 +1,1 @@
+# Sample Rails Clean Architerture
