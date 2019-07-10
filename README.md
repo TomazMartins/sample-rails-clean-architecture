@@ -1,1 +1,1 @@
-# Sample Rails Clean Architerture
+# Sample Rails Clean Architecture
