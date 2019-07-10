@@ -5,9 +5,9 @@ module CoreDomain
 
     initializer "foo_bar", after: :load_config_initializers do |app|
       # To load the no defaults directories of Rails
-      CoreDomain.load_files.each do |file|
-        require_relative File.join("../..", file)
-      end
+      # CoreDomain.load_files.each do |file|
+      #   require_relative File.join("../..", file)
+      # end
 
       # To add the migration in main app
       config.paths["db/migrate"].expanded.each do |expanded_path|

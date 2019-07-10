@@ -1,6 +1,6 @@
 default: &default
-  adapter: postgresql
   pool: <%= ENV['DB_POOL'] || 5 %>
+  adapter: postgresql
   timeout: 5000
 
 development:
@@ -16,9 +16,9 @@ test:
   host: <%= ENV['DB_HOST'] || 'localhost' %>
   username: <%= ENV['DB_USERNAME'] || 'postgres' %>
   password:
-  database: dbsample_rails_clean_architecture_test
+  database: sample_rails_clean_architecture_test
 
 production:
   <<: *default
   url:  <%= ENV["DATABASE_URL"] %>
-  encoding: utf8:
+  encoding: utf8
